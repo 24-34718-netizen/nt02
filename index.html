@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>One Piece | Straw Hat Pirates</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Pirata+One&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+      /* CUSTOM CSS */
+      :root {
+        --op-red: #C62828;
+        --op-gold: #FBC02D;
+        --op-dark: white;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-image: url('onepiece.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+      }
+
+      /* Transparent Navbar */
+      .navbar {
+        background-color: transparent !important;
+        padding-top: 20px;
+      }
+
+      .navbar-brand, .nav-link {
+        color: var(--op-dark) !important;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+      }
+
+      .nav-link:hover {
+        color: var(--op-gold) !important;
+      }
+
+      /* Hero Section */
+      .hero-title {
+        font-family: 'Noto Sans JP', 'Pirata One', cursive;
+        font-size: 3.5rem;
+        color: var(--op-dark);
+        margin-bottom: 0.5rem;
+        text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+      }
+
+      .hero-subtitle {
+        font-family: 'Pirata One', cursive;
+        font-size: 2.5rem;
+        color: var(--op-gold);
+        margin-bottom: 1.5rem;
+        text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+      }
+
+      .hero-text {
+        color: var(--op-dark);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+      }
+
+      .btn-pirate {
+        background-color: transparent;
+        color: red;
+        border-radius: 20px;
+        padding: 10px 25px;
+        font-weight: bold;
+        transition: all 0.3s;
+        border: 2px solid var(--op-dark);
+      }
+
+      .btn-pirate:hover {
+        background-color: var(--op-dark);
+        color: var(--op-red);
+        transform: translateY(-2px);
+      }
+
+      /* ----- CARD STYLES (TEXT ONLY) ----- */
+      .crew-card {
+        background-color: rgba(0, 0, 0, 0.65);
+        border: 2px solid var(--op-gold);
+        border-radius: 15px;
+        padding: 25px 20px;
+        height: 100%;
+        transition: transform 0.3s, box-shadow 0.3s;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      }
+
+      .crew-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+        border-color: #FFD54F;
+      }
+
+      .crew-card .card-title {
+        font-family: 'Pirata One', cursive;
+        font-size: 2rem;
+        color: var(--op-gold);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+        margin-bottom: 0.75rem;
+        letter-spacing: 1px;
+      }
+
+      .crew-card .card-role {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--op-red);
+        background-color: rgba(255, 255, 255, 0.9);
+        display: inline-block;
+        padding: 3px 12px;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+        letter-spacing: 0.5px;
+      }
+
+      .crew-card .card-text {
+        color: #f0f0f0;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+        margin-bottom: 0;
+      }
+
+      /* Section heading */
+      .section-heading {
+        font-family: 'Pirata One', cursive;
+        font-size: 3rem;
+        color: var(--op-gold);
+        text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+        letter-spacing: 2px;
+      }
+
+      .section-subheading {
+        color: var(--op-dark);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+        margin-bottom: 2rem;
+      }
+
+      /* Footer */
+      .op-footer {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 20px 0;
+        margin-top: 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- TRANSPARENT NAVBAR -->
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="flag.png" alt="Straw Hat Logo" style="width: 50px; height: auto; margin-right: 10px;">
+            <div>
+              <div style="font-size: 0.8rem; line-height: 1;">Straw Hat</div>
+              <div style="font-size: 1.2rem; line-height: 1;">PIRATES</div>
+            </div>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+              <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#crew">Crew</a></li>
+              <li class="nav-item"><a class="nav-link" href="#bounties">Bounties</a></li>
+              <li class="nav-item"><a class="nav-link" href="#grandline">Grand Line</a></li>
+              <li class="nav-item ms-lg-4">
+                <a href="#" class="btn btn-pirate btn-sm">Watch Trailer</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="container mt-4 mt-lg-5" id="home">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="hero-title">ようこそ</h1>
+          <h2 class="hero-subtitle">Grand Line</h2>
+          <p class="hero-text">
+            The Straw Hat Pirates are an infamous and powerful pirate crew led by Monkey D. Luffy.
+            They sail the treacherous seas in search of the legendary treasure known as the "One Piece"
+            to fulfill their captain's dream of becoming the Pirate King. After eating a mysterious fruit that turns his body into rubber, Luffy sails the dangerous seas to find the ultimate hidden treasure known as the One Piece. He gathers a loyal crew of unique friends who help him chase his grand dream of becoming the King of the Pirates. Together, they battle powerful enemies and challenge a corrupt global government while uncovering the secrets of the world.
+          </p>
+          <a href="#crew" class="btn btn-pirate">Join the Crew</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- ====== CREW SECTION: ALL 10 MEMBERS ====== -->
+    <section class="container mt-5" id="crew">
+      <div class="text-center mb-5">
+        <h2 class="section-heading">Straw Hat Crew</h2>
+        <p class="section-subheading">The ten pirates who sail under the flag of the future Pirate King</p>
+      </div>
+
+      <!-- First 9 members: 3-column grid -->
+      <div class="row g-4 justify-content-center">
+
+        <!-- 1. Luffy -->
+        <div class="col-md-6 col-lg-4">
+          <div class="crew-card">
+            <h3 class="card-title">Monkey D. Luffy</h3>
+            <span class="card-role">Captain / Rubber Man</span>
+            <p class="card-text">
+              The cheerful and fearless captain of the Straw Hat Pirates. After eating the Gomu Gomu no Mi,
+              his body became rubber, granting him incredible elasticity and combat power. His dream is to
+              find the One Piece and become the Pirate King, valuing freedom, friendship, and protecting
+              his crew above all else.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. Zoro -->
+        <div class="col-md-6 col-lg-4">
+          <div class="crew-card">
+            <h3 class="card-title">Roronoa Zoro</h3>
+            <span class="card-role">First Mate / Swordsman</span>
+            <p class="card-text">
+              A master of the three-sword style and Luffy's first crewmate. Zoro is a former pirate hunter
+              with an unbreakable will and a promise to become the World's Greatest Swordsman. His loyalty
+              to his captain is absolute, and he takes on the most dangerous enemies with calm precision.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. Nami -->
+        <div class="col-md-6 col-lg-4">
+          <div class="crew-card">
+            <h3 class="card-title">Nami</h3>
+            <span class="card-role">Navigator / Thief</span>
+            <p class="card-text">
+              The brilliant navigator who can read the unpredictable weather of the Grand Line with unmatched
+              skill. Originally a thief, Nami joined Luffy to free her village from Arlong's tyranny. She
+              dreams of drawing a complete map of the world and uses her Clima-Tact to control storms.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. Usopp -->
+        <div class="col-md-6 col-lg-4">
+          <div class="crew-card">
+            <h3 class="card-title">Usopp</h3>
+            <span class="card-role">Sniper / Inventor</span>
+            <p class="card-text">
+              The brave yet cowardly sniper of the crew, known for his tall tales and incredible marksmanship.
+              Usopp dreams of becoming a brave warrior of the sea. He wields a slingshot and later develops
+              powerful pop greens, proving his worth in battle despite his fears.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5. Sanji -->
+        <div class="col-md-6 col-lg-4">
+          <div class="crew-card">
+            <h3 class="card-title">Vinsmoke Sanji</h3>
+            <span class="card-role">Cook / Martial Artist</span>
+            <p class="card-text">
+              The chivalrous cook of the Straw Hats who only uses his legs in combat to protect his hands
+              for cooking. Sanji dreams of finding the All Blue, a legendary sea where all fish from the
+              four oceans meet. He is a master of Black Leg Style and fiercely protective of his crew.
+            </p>
+          </div>
+        </div>
+
+        <!-- 6. Chopper -->
+        <div class="col-md-6 col-lg-4">
+          <div class="crew-card">
+            <h3 class="card-title">Tony Tony Chopper</h3>
+            <span class="card-role">Doctor / Zoan Devil Fruit User</span>
+            <p class="card-text">
+              A reindeer who ate the Hito Hito no Mi, granting him human intelligence and the ability to
+              transform. Chopper is the crew's doctor and dreams of becoming a panacea capable of curing
+              any disease. Despite his small size, he can become a monstrous fighter with his Rumble Balls.
+            </p>
+          </div>
+        </div>
+
+        <!-- 7. Robin -->
+        <div class="col-md-6 col-lg-4">
+          <div class="crew-card">
+            <h3 class="card-title">Nico Robin</h3>
+            <span class="card-role">Archaeologist / Devil Child</span>
+            <p class="card-text">
+              The sole survivor of Ohara and the only person who can read Poneglyphs. Robin joined the
+              Straw Hats after Luffy saved her from the World Government. She dreams of uncovering the
+              true history of the world and finding the Rio Poneglyph, using her Hana Hana no Mi powers.
+            </p>
+          </div>
+        </div>
+
+        <!-- 8. Franky -->
+        <div class="col-md-6 col-lg-4">
+          <div class="crew-card">
+            <h3 class="card-title">Franky</h3>
+            <span class="card-role">Shipwright / Cyborg</span>
+            <p class="card-text">
+              A self-made cyborg and the brilliant shipwright who built the Thousand Sunny. Franky dreams
+              of creating a ship that can sail to the end of the Grand Line. He fights with powerful
+              cola-powered weapons and is known for his eccentric "SUPER" personality and loyalty.
+            </p>
+          </div>
+        </div>
+
+        <!-- 9. Brook -->
+        <div class="col-md-6 col-lg-4">
+          <div class="crew-card">
+            <h3 class="card-title">Brook</h3>
+            <span class="card-role">Musician / Skeleton Swordsman</span>
+            <p class="card-text">
+              A living skeleton brought back by the Yomi Yomi no Mi. Brook is the crew's musician and a
+              gentleman swordsman who wields a cane sword. He dreams of reuniting with his whale friend
+              Laboon and plays soulful music that can affect the emotions of those who hear it.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 10. Jinbe — Centered at the bottom -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="crew-card">
+            <h3 class="card-title">Jinbe</h3>
+            <span class="card-role">Helmsman / Fish-Man Karate Master</span>
+            <p class="card-text">
+              A former Warlord of the Sea and captain of the Sun Pirates, Jinbe is a whale shark fish-man
+              who joined the Straw Hats as their helmsman. He is a master of Fish-Man Karate and brings
+              wisdom, honor, and immense experience to the crew, dreaming of true equality between humans
+              and fish-men.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
